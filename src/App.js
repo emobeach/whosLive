@@ -1,25 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
+//import { ReactComponent } from '*.svg';
+import axios from 'axios';
+import React from 'react';
+import Follow from './Follow.js'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
+const TWITCH_SECRET = '62y8kjf7gtvmrt15a5g4y824z41yyu'
+
+
+
+class App extends React.Component{
+  constructor(props){
+    super(props)
+  }
+  render(){
+    return(
+      <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Follow />
       </header>
     </div>
-  );
+    )
+  }
 }
 
 export default App;
