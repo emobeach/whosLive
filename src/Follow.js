@@ -1,7 +1,8 @@
 import { getAllByDisplayValue } from '@testing-library/react';
 import axios from 'axios';
 import React from 'react';
-import List from './List'
+import List from './List';
+import './App.css'
 const BASE_URL = 'https://api.twitch.tv/helix/'
 const CLIENT_ID = 'kavo7ux6fwiw93nkh9k5lk9i8rqrp5'
 const TWITCH_SECRET = '62y8kjf7gtvmrt15a5g4y824z41yyu'
@@ -122,14 +123,12 @@ class Follow extends React.Component{
 
     render(){
         return(
-            <div>
-                <ul>
-                    <List follows = {this.state.follows}/>
-                </ul>
+            <div id='container'>
+                {this.state.follows && <List follows = {this.state.follows}/>}
             </div>
         )
     }
 
-}
+} 
 
 export default Follow

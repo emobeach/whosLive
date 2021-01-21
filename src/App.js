@@ -21,12 +21,50 @@ class App extends React.Component{
   }
   render(){
     return(
-      <div className="App">
-      <header className="App-header">
-        <Follow />
-      </header>
-    </div>
-    )
+      <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">User Input</Link>
+            </li>
+            <li>
+              <Link to="/follows">Follows</Link>
+            </li>
+            <li>
+              <Link to="/popular">Popular</Link>
+            </li>
+          </ul>
+        </nav>
+
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/follows">
+            <div className="App">
+              <header className="App-header">
+                <Follow />
+              </header>
+            </div>
+            </Route>
+            <Route path="/popular">
+              <div className="App">
+                <header className="App-header">
+                  <Follow />
+                </header>
+              </div>
+            </Route>
+            <Route path="/">
+              <div className="App">
+                <header className="App-header">
+                  <Follow />
+                </header>
+              </div>
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+    );
   }
 }
 
