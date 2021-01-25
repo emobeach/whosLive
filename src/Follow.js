@@ -2,7 +2,14 @@ import { getAllByDisplayValue } from '@testing-library/react';
 import axios from 'axios';
 import React from 'react';
 import List from './List';
+import Popular from './Popular'
 import './App.css'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 const BASE_URL = 'https://api.twitch.tv/helix/'
 const CLIENT_ID = 'kavo7ux6fwiw93nkh9k5lk9i8rqrp5'
 const TWITCH_SECRET = '62y8kjf7gtvmrt15a5g4y824z41yyu'
@@ -123,9 +130,32 @@ class Follow extends React.Component{
 
     render(){
         return(
-            <div id='container'>
-                {this.state.follows && <List follows = {this.state.follows}/>}
-            </div>
+            <Router>
+                <div>
+                    <nav>
+                        <ul>
+                            <li>
+                                <Link to="/follows">Follows</Link>
+                            </li>
+                            <li>
+                                <Link to="/popular">Popular</Link>
+                            </li>
+                        </ul>
+                    </nav>
+                    <Switch>
+                        <Route path="/follows">
+                            <div id='container'>
+                                {this.state.follows && <List follows = {this.state.follows}/>}
+                            </div>
+                        </Route>
+                        <Route path="/popular">
+                            <div id='container'>
+                                <Popular />
+                            </div>                        
+                        </Route>
+                    </Switch>
+                </div>
+            </Router>
         )
     }
 

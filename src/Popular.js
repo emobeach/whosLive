@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react';
+import Stream from './Stream'
 const BASE_URL = 'https://api.twitch.tv/helix/'
 const CLIENT_ID = 'kavo7ux6fwiw93nkh9k5lk9i8rqrp5'
 const TWITCH_SECRET = '62y8kjf7gtvmrt15a5g4y824z41yyu'
@@ -14,8 +15,8 @@ class Popular extends React.Component{
         super(props)
         this.state = {}
     }
-    getPopular(){
-        const res = axios.get(BASE_URL + 'streams')
+    async getPopular(){
+        const res = await axios.get(BASE_URL + 'streams')
         this.setState({popular: res.data.data})
     }
 

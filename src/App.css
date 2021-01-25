@@ -1,6 +1,9 @@
 .App {
   text-align: center;
-  background-color: #302505 ;
+  background-color: #282c34 ;
+  width: 650px;
+  height: 425px;
+  overflow: hidden;
 }
 
 .App-logo {
@@ -23,6 +26,9 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  width: 650px;
+  height: 425px;
+  overflow: hidden;
 }
 
 .App-link {
@@ -58,7 +64,8 @@ li{
 
 .live-user{
   grid-row: 4;
-  grid-column: 1
+  grid-column: 1;
+  font: bold
 
 }
 
@@ -90,4 +97,11 @@ ul{
 #container{
   width: 600px;
   height: 400px;
+  overflow-y: scroll;
+}
+nav{
+  width: 650px;
+  overflow: hidden;
+  background-color: #282c34 ;
+
 }

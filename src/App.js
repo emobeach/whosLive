@@ -47,13 +47,6 @@ class App extends React.Component{
               </header>
             </div>
             </Route>
-            <Route path="/popular">
-              <div className="App">
-                <header className="App-header">
-                  <Follow />
-                </header>
-              </div>
-            </Route>
             <Route path="/">
               <div className="App">
                 <header className="App-header">
